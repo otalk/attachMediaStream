@@ -3,6 +3,7 @@ return (function(e,t,n){function i(n,s){if(!t[n]){if(!e[n]){var o=typeof require
 module.exports = function (element, stream, play) {
     var autoPlay = (play === false) ? false : true;
 
+    if (element.jquery) element = element[0];
     if (autoPlay) element.autoplay = true;
 
     // handle mozilla case
