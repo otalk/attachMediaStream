@@ -1,0 +1,21 @@
+{
+  "name": "attachmediastream",
+  "version": "0.0.1",
+  "description": "cross-browser way to attach a media stream to a video element.",
+  "main": "attachmediastream.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HenrikJoreteg/attachMediaStream"
+  },
+  "keywords": [
+    "browser",
+    "getUserMedia",
+    "browserify",
+    "WebRTC"
+  ],
+  "author": "Henrik Joreteg <henrik@andyet.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "2.x"
+  }
+}
