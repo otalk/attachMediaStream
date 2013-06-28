@@ -1,6 +1,7 @@
 module.exports = function (element, stream, play) {
     var autoPlay = (play === false) ? false : true;
 
+    if (element.jquery) element = element[0];
     if (autoPlay) element.autoplay = true;
 
     // handle mozilla case
