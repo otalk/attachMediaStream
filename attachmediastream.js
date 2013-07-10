@@ -19,5 +19,5 @@ module.exports = function (element, stream, play) {
         }
     }
 
-    return true;
+    return element;
 };

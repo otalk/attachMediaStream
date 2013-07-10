@@ -43,7 +43,7 @@ getUserMedia(function (err, stream) {
 
 ## Other Details
 
-The module's main function returns `true` if successful and `false` otherwise. In case that's useful. But if you're able to getUserMedia to begin with, attaching it shouldn't really fail.
+The module's main function returns the element if successful and `false` otherwise. In case that's useful. But if you're able to getUserMedia to begin with, attaching it shouldn't really fail.
 
 ## License
 
