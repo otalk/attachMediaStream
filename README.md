@@ -8,6 +8,7 @@ Suitable for use with browserify/CommonJS on the client.
 
 If you're not using browserify or you want AMD support use `attachmediastream.bundle.js`.
 
+This module will largely be obsolete once we get `URL.createObjectUrl(stream)` everywhere.
 
 ## Installing
 
@@ -39,7 +40,9 @@ getUserMedia(function (err, stream) {
 });
 ```
 
-## Why? Browsers do it differently, that's why
+## Why? Browsers do it differently, that's why.
+
+This is actually less true than it used to be. It's fairly safe to just use `URL.createObjectUrl(stream)` now.
 
 ## Other Details
 
