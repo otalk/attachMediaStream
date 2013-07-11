@@ -8,7 +8,6 @@ Suitable for use with browserify/CommonJS on the client.
 
 If you're not using browserify or you want AMD support use `attachmediastream.bundle.js`.
 
-This module will largely be obsolete once we get `URL.createObjectUrl(stream)` everywhere.
 
 ## Installing
 
