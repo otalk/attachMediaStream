@@ -19,16 +19,16 @@
         <script src="getusermedia.bundle.js"></script>
         <script src="attachmediastream.bundle.js"></script>
         <script>
-            getusermedia(function (err, stream) {
+            getUserMedia(function (err, stream) {
                 console.log('err', err, stream);
                 var muted = document.getElementById('muted');
                 var noautoplay = document.getElementById('noautoplay');
                 var mirrored = document.getElementById('mirrored');
 
-                attachmediastream(stream, muted, {muted: true});
-                attachmediastream(stream, noautoplay, {autoplay: false});
-                attachmediastream(stream, mirrored, {mirror: true});
-                document.getElementById('vidContainer').appendChild(attachmediastream(stream));
+                attachMediaStream(stream, muted, {muted: true});
+                attachMediaStream(stream, noautoplay, {autoplay: false});
+                attachMediaStream(stream, mirrored, {mirror: true});
+                document.getElementById('vidContainer').appendChild(attachMediaStream(stream));
             });
         </script>
     </body>

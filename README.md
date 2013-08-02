@@ -6,7 +6,7 @@ A tiny browser module for attaching a media stream to a video element. It handle
 
 Suitable for use with browserify/CommonJS on the client. 
 
-If you're not using browserify or you want AMD support use `attachmediastream.bundle.js`.
+If you're not using browserify or you want AMD support use `attachmediastream.bundle.js`. Note that if no module system is detected it simply attaches a function called `attachMediaStream` to `window`.
 
 
 ## Installing

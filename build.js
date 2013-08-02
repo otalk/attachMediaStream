@@ -1,6 +1,6 @@
-var bundle = require('browserify')(),
-    fs = require('fs');
+var bundle = require('browserify')();
+var fs = require('fs');
 
 
 bundle.add('./attachmediastream');
-bundle.bundle({standalone: 'attachmediastream'}).pipe(fs.createWriteStream('attachmediastream.bundle.js'));
+bundle.bundle({standalone: 'attachMediaStream'}).pipe(fs.createWriteStream('attachmediastream.bundle.js'));
