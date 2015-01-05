@@ -2,7 +2,7 @@
 
 ## What is this?
 
-A tiny browser module for attaching a media stream to a video element. It handles the differences between browsers.
+A tiny browser module for attaching a media stream to a video (or audio) element. It handles the differences between browsers.
 
 Suitable for use with browserify/CommonJS on the client. 
 
@@ -54,7 +54,10 @@ getUserMedia(function (err, stream) {
         // muted is false, by default
         // this will mute the video. Again, this is a good idea when showing
         // a user their own video. Or there will be feedback issues.
-        muted: true
+        muted: true,
+
+        // attach as an audio element instead of video
+        audio: false
       });
 
     }
