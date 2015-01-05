@@ -1,12 +1,13 @@
 module.exports = function (stream, el, options) {
+    var item;
     var URL = window.URL;
+    var element = el;
     var opts = {
         autoplay: true,
         mirror: false,
-        muted: false
+        muted: false,
+        audio: false
     };
-    var element = el || document.createElement('video');
-    var item;
 
     if (options) {
         for (item in options) {
@@ -14,9 +15,15 @@ module.exports = function (stream, el, options) {
         }
     }
 
+    if (!element) {
+        element = document.createElement(opts.audio ? 'audio' : 'video');
+    } else if (element.tagName.toLowerCase() === 'audio') {
+        opts.audio = true;
+    }
+
     if (opts.autoplay) element.autoplay = 'autoplay';
     if (opts.muted) element.muted = true;
-    if (opts.mirror) {
+    if (!opts.audio && opts.mirror) {
         ['', 'moz', 'webkit', 'o', 'ms'].forEach(function (prefix) {
             var styleName = prefix ? prefix + 'Transform' : 'transform';
             element.style[styleName] = 'scaleX(-1)';

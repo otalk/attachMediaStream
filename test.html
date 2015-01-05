@@ -13,6 +13,9 @@
         <p>mirrored</p>
         <video id="mirrored" width="300" height="200"></video>
         
+        <p>audio only (look in the inspector)</p>
+        <audio id="audio"></audio>
+ 
         <p>generated</p>
         <div id="vidContainer"></div>
 
@@ -24,10 +27,12 @@
                 var muted = document.getElementById('muted');
                 var noautoplay = document.getElementById('noautoplay');
                 var mirrored = document.getElementById('mirrored');
+                var audio = document.getElementById('audio');
 
                 attachMediaStream(stream, muted, {muted: true});
                 attachMediaStream(stream, noautoplay, {autoplay: false});
                 attachMediaStream(stream, mirrored, {mirror: true});
+                attachMediaStream(stream, audio, {audio: true});
                 document.getElementById('vidContainer').appendChild(attachMediaStream(stream));
             });
         </script>
