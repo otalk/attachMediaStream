@@ -6,7 +6,8 @@ module.exports = function (stream, el, options) {
         autoplay: true,
         mirror: false,
         muted: false,
-        audio: false
+        audio: false,
+        disableContextMenu: false
     };
 
     if (options) {
@@ -19,6 +20,12 @@ module.exports = function (stream, el, options) {
         element = document.createElement(opts.audio ? 'audio' : 'video');
     } else if (element.tagName.toLowerCase() === 'audio') {
         opts.audio = true;
+    }
+
+    if (opts.disableContextMenu) {
+        element.oncontextmenu = function (e) {
+            e.preventDefault();
+        };
     }
 
     if (opts.autoplay) element.autoplay = 'autoplay';
