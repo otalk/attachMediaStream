@@ -30,14 +30,12 @@ module.exports = function (stream, el, options) {
         });
     }
 
-    // this first one should work most everywhere now
-    // but we have a few fallbacks just in case.
-    if (URL && URL.createObjectURL) {
-        element.src = URL.createObjectURL(stream);
-    } else if (element.srcObject) {
+    if (typeof element.srcObject !== 'undefined') {
         element.srcObject = stream;
-    } else if (element.mozSrcObject) {
+    } else if (typeof element.mozSrcObject !== 'undefined') {
         element.mozSrcObject = stream;
+    } else if (URL && URL.createObjectURL) {
+        element.src = URL.createObjectURL(stream);
     } else {
         return false;
     }
