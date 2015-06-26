@@ -1,9 +1,11 @@
+var adapter = require('webrtc-adapter-test');
 module.exports = function (stream, el, options) {
     var URL = window.URL;
     var opts = {
         autoplay: true,
         mirror: false,
-        muted: false
+        muted: false,
+        contextmenu: false
     };
     var element = el || document.createElement('video');
     var item;
@@ -22,18 +24,9 @@ module.exports = function (stream, el, options) {
             element.style[styleName] = 'scaleX(-1)';
         });
     }
-
-    // this first one should work most everywhere now
-    // but we have a few fallbacks just in case.
-    if (URL && URL.createObjectURL) {
-        element.src = URL.createObjectURL(stream);
-    } else if (element.srcObject) {
-        element.srcObject = stream;
-    } else if (element.mozSrcObject) {
-        element.mozSrcObject = stream;
-    } else {
-        return false;
+    if (!opts.contextmenu) {
+        element.oncontextmenu = function () { return false; };
     }
-
+    adapter.attachMediaStream(element, stream);
     return element;
 };
