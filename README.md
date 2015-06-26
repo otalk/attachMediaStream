@@ -2,11 +2,11 @@
 
 ## What is this?
 
-A tiny browser module for attaching a media stream to a video (or audio) element. It handles the differences between browsers.
+A tiny browser module for attaching a media stream to a video (or audio) element with some options. It handles the differences between browsers via [adapter.js](https://github.com/webrtc/adapter.js).
 
 Suitable for use with browserify/CommonJS on the client. 
 
-If you're not using browserify or you want AMD support use `attachmediastream.bundle.js`. Note that if no module system is detected it simply attaches a function called `attachMediaStream` to `window`.
+If you're not using browserify or you want AMD support use `attachmediastream.bundle.js`.
 
 
 ## Installing
@@ -66,22 +66,9 @@ getUserMedia(function (err, stream) {
 
 ## Why? 
 
-Browsers used to to this very differently. This is now less true than it used to be. It's fairly safe to just use `URL.createObjectUrl(stream)`.
+Browsers used to to this very differently. This is now less true than it used to be.
 
-However, it's nice to know it will work if that's not true and it's also handy to be able to control mirroring, muting, autoplay in one shot with sane defaults.
-
-
-## Caveats
-
-As of writing this, FireFox doesn't let you show local video feed more than once on a page and trying to do so will result in none of them playing and it appearing broken.
-
-As a result the `test.html` file won't work in FireFox stable unless you do one at a time.
-
-
-## Other Details
-
-The module's main function returns the element if successful and `false` otherwise. But if you're able to getUserMedia to begin with, attaching it shouldn't really fail.
-
+It's still handy to be able to control mirroring, muting, autoplay in one shot with sane defaults.
 
 ## License
 
@@ -91,4 +78,3 @@ MIT
 ## Created By
 
 If you like this, follow [@HenrikJoreteg](http://twitter.com/henrikjoreteg) on twitter.
-
