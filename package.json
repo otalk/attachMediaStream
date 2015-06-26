@@ -16,6 +16,9 @@
   ],
   "author": "Henrik Joreteg <henrik@andyet.net>",
   "license": "MIT",
+  "dependencies": {
+    "webrtc-adapter-test": "0.x"
+  },
   "devDependencies": {
     "browserify": "2.x"
   }
