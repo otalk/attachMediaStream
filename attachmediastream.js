@@ -1,3 +1,4 @@
+var adapter = require('webrtc-adapter-test');
 module.exports = function (stream, el, options) {
     var item;
     var URL = window.URL;
@@ -37,15 +38,6 @@ module.exports = function (stream, el, options) {
         });
     }
 
-    if (typeof element.srcObject !== 'undefined') {
-        element.srcObject = stream;
-    } else if (typeof element.mozSrcObject !== 'undefined') {
-        element.mozSrcObject = stream;
-    } else if (URL && URL.createObjectURL) {
-        element.src = URL.createObjectURL(stream);
-    } else {
-        return false;
-    }
-
+    adapter.attachMediaStream(element, stream);
     return element;
 };
