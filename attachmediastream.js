@@ -1,6 +1,3 @@
-if (!(window.webkitRTCPeerConnection || window.mozRTCPeerConnection)) {
-    window.RTCPeerConnection = null;
-}
 var adapter = require('webrtc-adapter-test');
 module.exports = function (stream, el, options) {
     var item;
