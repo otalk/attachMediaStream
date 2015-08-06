@@ -1,6 +1,6 @@
 {
   "name": "attachmediastream",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "cross-browser way to attach a media stream to a video element.",
   "main": "attachmediastream.js",
   "repository": {
