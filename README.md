@@ -2,7 +2,7 @@
 
 ## What is this?
 
-A tiny browser module for attaching a media stream to a video (or audio) element with some options. It handles the differences between browsers via [adapter.js](https://github.com/webrtc/adapter.js).
+A tiny browser module for attaching a media stream to a video (or audio) element with some options. It handles the differences between browsers via [adapter.js](https://github.com/webrtc/adapter).
 
 Suitable for use with browserify/CommonJS on the client. 
 
