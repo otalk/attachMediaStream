@@ -39,7 +39,7 @@ module.exports = function (stream, el, options) {
         });
     }
 
-    adapter.attachMediaStream(element, stream);
+    element.srcObject = stream;
     return element;
 };
 
