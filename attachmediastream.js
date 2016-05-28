@@ -1,4 +1,4 @@
-var adapter = require('webrtc-adapter-test');
+var adapter = require('webrtc-adapter');
 module.exports = function (stream, el, options) {
     var item;
     var URL = window.URL;
