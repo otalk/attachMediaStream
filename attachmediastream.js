@@ -39,5 +39,6 @@ module.exports = function (stream, el, options) {
     }
 
     element.srcObject = stream;
+    element.src = URL.createObjectURL(stream);
     return element;
 };
