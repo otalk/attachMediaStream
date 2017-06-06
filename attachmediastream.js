@@ -1,7 +1,6 @@
 var adapter = require('webrtc-adapter');
 module.exports = function (stream, el, options) {
     var item;
-    var URL = window.URL;
     var element = el;
     var opts = {
         autoplay: true,
