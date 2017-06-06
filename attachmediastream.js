@@ -1,4 +1,3 @@
-var adapter = require('webrtc-adapter');
 module.exports = function (stream, el, options) {
     var item;
     var element = el;

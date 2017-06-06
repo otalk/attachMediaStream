@@ -6,19 +6,20 @@
     <body>
         <p>muted</p>
         <video id="muted" width="300" height="200"></video>
-        
+
         <p>not auto played</p>
         <video id="noautoplay" width="300" height="200"></video>
-        
+
         <p>mirrored</p>
         <video id="mirrored" width="300" height="200"></video>
-        
+
         <p>audio only</p>
         <audio id="audio" controls></audio>
- 
+
         <p>generated</p>
         <div id="vidContainer"></div>
 
+        <script src="node_modules/webrtc-adapter/out/adapter.js"></script>
         <script src="getusermedia.bundle.js"></script>
         <script src="attachmediastream.bundle.js"></script>
         <script>
