@@ -20,11 +20,10 @@
         <div id="vidContainer"></div>
 
         <script src="node_modules/webrtc-adapter/out/adapter.js"></script>
-        <script src="getusermedia.bundle.js"></script>
         <script src="attachmediastream.bundle.js"></script>
         <script>
-            getUserMedia(function (err, stream) {
-                console.log('err', err, stream);
+            navigator.mediaDevices.getUserMedia({audio: true, video: true})
+            .then(function(stream) {
                 var muted = document.getElementById('muted');
                 var noautoplay = document.getElementById('noautoplay');
                 var mirrored = document.getElementById('mirrored');
@@ -35,7 +34,8 @@
                 attachMediaStream(stream, mirrored, {mirror: true});
                 attachMediaStream(stream, audio, {audio: true});
                 document.getElementById('vidContainer').appendChild(attachMediaStream(stream));
-            });
+            })
+            .catch(function(err) { console.error(err); });
         </script>
     </body>
 </html>
