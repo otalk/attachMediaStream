@@ -39,7 +39,7 @@ module.exports = function (stream, el, options) {
     }
 
     if (adapter.browserDetails.browser === 'safari') {
-        element.playsinline = true;
+        element.setAttribute('playsinline', true);
     }
 
     element.srcObject = stream;
