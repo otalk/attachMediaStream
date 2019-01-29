@@ -30,11 +30,11 @@ module.exports = function (stream, el, options) {
     }
 
     if (opts.autoplay) element.autoplay = 'autoplay';
-    if (opts.muted) element.muted = true;
-    if (!opts.audio && opts.mirror) {
+    element.muted = !!opts.muted;
+    if (!opts.audio) {
         ['', 'moz', 'webkit', 'o', 'ms'].forEach(function (prefix) {
             var styleName = prefix ? prefix + 'Transform' : 'transform';
-            element.style[styleName] = 'scaleX(-1)';
+            element.style[styleName] = opts.mirror ? 'scaleX(-1)' : 'scaleX(1)';
         });
     }
 
